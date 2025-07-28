@@ -13,34 +13,34 @@ import org.mapstruct.*;
  * name differences and custom conversions 4. Generated code is type-safe and performant
  */
 @Mapper(
-        componentModel = "spring",
-        unmappedTargetPolicy = ReportingPolicy.IGNORE,
-        nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    componentModel = "spring",
+    unmappedTargetPolicy = ReportingPolicy.IGNORE,
+    nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface BookMapper {
 
-    /**
-     * Convert BookRequest to Book entity Interview Point: @Mapping ignores fields that should be set
-     * by JPA/system
-     */
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "version", ignore = true)
-    @Mapping(target = "createdAt", ignore = true)
-    @Mapping(target = "updatedAt", ignore = true)
-    Book toEntity(BookRequest request);
+  /**
+   * Convert BookRequest to Book entity Interview Point: @Mapping ignores fields that should be set
+   * by JPA/system
+   */
+  @Mapping(target = "id", ignore = true)
+  @Mapping(target = "version", ignore = true)
+  @Mapping(target = "createdAt", ignore = true)
+  @Mapping(target = "updatedAt", ignore = true)
+  Book toEntity(BookRequest request);
 
-    /**
-     * Convert Book entity to BookResponse Interview Point: All fields are mapped automatically due to
-     * matching names
-     */
-    BookResponse toResponse(Book book);
+  /**
+   * Convert Book entity to BookResponse Interview Point: All fields are mapped automatically due to
+   * matching names
+   */
+  BookResponse toResponse(Book book);
 
-    /**
-     * Update existing Book entity from BookRequest Interview Point: @MappingTarget updates existing
-     * object instead of creating new one
-     */
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "version", ignore = true)
-    @Mapping(target = "createdAt", ignore = true)
-    @Mapping(target = "updatedAt", ignore = true)
-    void updateEntity(@MappingTarget Book book, BookRequest request);
+  /**
+   * Update existing Book entity from BookRequest Interview Point: @MappingTarget updates existing
+   * object instead of creating new one
+   */
+  @Mapping(target = "id", ignore = true)
+  @Mapping(target = "version", ignore = true)
+  @Mapping(target = "createdAt", ignore = true)
+  @Mapping(target = "updatedAt", ignore = true)
+  void updateEntity(@MappingTarget Book book, BookRequest request);
 }

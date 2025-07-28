@@ -23,20 +23,20 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableMethodSecurity(prePostEnabled = true) // Enables @PreAuthorize/@PostAuthorize
 public class BookApiApplication {
 
-    /**
-     * Spring Boot Startup Process (Interview Question): 1. SpringApplication.run() creates
-     * SpringApplication instance 2. Determines application type (SERVLET, REACTIVE, NONE) 3. Loads
-     * ApplicationContextInitializers and ApplicationListeners 4. Creates and configures
-     * ApplicationContext 5. Runs auto-configuration classes based on classpath 6. Scans
-     * for @Component, @Service, @Repository, @Controller 7. Starts embedded server (Tomcat by
-     * default) 8. Publishes ApplicationReadyEvent
-     */
-    public static void main(String[] args) {
-        // JVM optimizations for production
-        System.setProperty("spring.jmx.enabled", "true");
-        System.setProperty(
-                "management.endpoints.web.exposure.include", "health,info,metrics,prometheus");
+  /**
+   * Spring Boot Startup Process (Interview Question): 1. SpringApplication.run() creates
+   * SpringApplication instance 2. Determines application type (SERVLET, REACTIVE, NONE) 3. Loads
+   * ApplicationContextInitializers and ApplicationListeners 4. Creates and configures
+   * ApplicationContext 5. Runs auto-configuration classes based on classpath 6. Scans
+   * for @Component, @Service, @Repository, @Controller 7. Starts embedded server (Tomcat by
+   * default) 8. Publishes ApplicationReadyEvent
+   */
+  public static void main(String[] args) {
+    // JVM optimizations for production
+    System.setProperty("spring.jmx.enabled", "true");
+    System.setProperty(
+        "management.endpoints.web.exposure.include", "health,info,metrics,prometheus");
 
-        SpringApplication.run(BookApiApplication.class, args);
-    }
+    SpringApplication.run(BookApiApplication.class, args);
+  }
 }

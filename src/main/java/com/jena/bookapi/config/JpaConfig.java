@@ -19,6 +19,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class JpaConfig {
 
-    // Additional JPA configuration can be added here
-    // For example: custom AuditorAware implementation for user tracking
+  // Additional JPA configuration can be added here
+  // For example: custom AuditorAware implementation for user tracking
 }
